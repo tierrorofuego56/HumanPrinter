@@ -1,8 +1,7 @@
 //Classes
+//Classes
 class Human
-
 {
-    private String filler;
     private String name;
     private String race;
     private String gender;
@@ -14,7 +13,6 @@ class Human
     //creates Human class w/ no variables
     public Human()
     {
-        filler = "Unidentified";
         name = "Unidentified";
         race = "Unidentified";
         gender = "Unidentified";
@@ -27,9 +25,9 @@ class Human
 
 
     //creates Human class w/all variables
-    public Human(String f, String n, String r, String g, String e, double h, double w, int a)
+    public Human(String n, String r, String g, String e, double h, double w, int a)
     {
-        filler = f;
+        
         name = n;
         race = r;
         gender = g;
@@ -40,9 +38,9 @@ class Human
     }
 
     //creates Human class w/standard variables
-    public Human(String f, String n, String g, String e, int a)
+    public Human(String n, String g, String e, int a)
     {
-        filler = f;
+        
         name = n;
         gender = g;
         ethnicity = e;
