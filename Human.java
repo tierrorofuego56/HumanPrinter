@@ -1,11 +1,11 @@
 //Classes
-//Classes
 class Human
 {
     private String name;
     private String race;
     private String gender;
     private String ethnicity;
+    private String personality;
     private double heightInCentimeters;
     private double weightInPounds;
     private int agebyYear;
@@ -113,6 +113,34 @@ class Human
         else{
             this.agebyYear = a;
         }
+    }
+
+    public void setPersonality(String p)
+    {
+        if(!(p.equalsIgnoreCase("Gloomy") && p.equalsIgnoreCase("Irritable") && p.equalsIgnoreCase("Timid") && p.equalsIgnoreCase("Upbeat")) ){
+
+            this.personality = "Mysterious";
+        }
+        else{
+            this.personality = p.toUpperCase();
+        }
+    }
+
+    public String personalityStatement(String personality)
+    {
+        switch(personality){
+            case "GLOOMY":
+            return "This character is gloomy.";
+            case "IRRITABLE":
+            return "This character is irritable.";
+            case "TIMID":
+            return "This character is timid.";
+            case "UPBEAT":
+            return "This character is upbeat.";
+            default:
+            return "This character is mysterious";
+        }
+
     }
 
 
