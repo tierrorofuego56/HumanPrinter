@@ -1,98 +1,109 @@
 import java.util.Scanner;
 
 public class Main{
-  public static void main(String[] args)
-{
 
-  Scanner scan = new Scanner(System.in);
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("H U M A N - P R I N T E R");
+    System.out.println("Choose identifier:\n[1. All parameters]\n[2. No parameters]\n[3.Standard parameters]");
+    int choice = sc.nextInt();
+    switch(choice){
+      case 1:
+      
+      sc.nextLine();
+      
+      System.out.print("Name: ");
+      
+      String n = sc.nextLine();
+      
+      System.out.print("Race: ");
+      
+      String r = sc.nextLine();
+      
+      System.out.print("Gender: ");
+      
+      String g = sc.nextLine();
+      
+      System.out.print("Ethnicity: ");
+      
+      String e = sc.nextLine();
+      
+      System.out.print("Height: ");
+      
+      double he = sc.nextDouble();
+      
+      System.out.print("Weight: ");
+      
+      double w = sc.nextDouble();
+      
+      System.out.print("Age: ");
+      
+      int a = sc.nextInt();
 
-  System.out.println("Welcome to Human Printer");
+      System.out.println("\n");
+      
+      Human h = new Human(n, r, g, e, he, w, a);
 
-  System.out.println("Select a choice");
+      String to = h.toString();
+      
+      System.out.println(to + "\n");
+      
+      System.out.println("Which personality would you want to grant the person?");
+     
+      System.out.println("[Gloomy], [Irritable], [Timid], [Upbeat]");
+     
+      sc.nextLine();
+      
+      String personality = sc.nextLine();
+      
+      System.out.println(h.personalityStatement(personality.toUpperCase()));
+      
+      break;
+      case 2:
+      
+      Human h1 = new Human();
 
-  System.out.println("1.] createHuman\n2.] exit");
+      System.out.println();
 
-  int choice = scan.nextInt();
-
-  if(choice == 1){
-    System.out.println("Choose identifier");
-
-    System.out.println("1.] All\n2.] None\n3.] Standard");
-
-    choice = scan.nextInt();
-
-    if(choice == 1){
-      System.out.println("Filler: ");
-      String filler = scan.nextLine();
-      System.out.println("Name: ");
-      String name = scan.nextLine();
-      System.out.println("Race ");
-      String race = scan.nextLine();
-      System.out.println("Gender: ");
-      String gender = scan.nextLine();
-      System.out.println("Ethnicity: ");
-      String ethnicity = scan.nextLine();
-      System.out.println("Height: ");
-      double height = scan.nextDouble();
-      System.out.println("Weight: ");
-      double weight = scan.nextDouble();
+      System.out.println(h1.toString());
+      break;
+      
+      case 3:
+      sc.nextLine();
+      System.out.print("Name: ");
+      String n2 = sc.nextLine();
+      System.out.print("Gender: ");
+      String g2 = sc.nextLine();
+      System.out.print("Ethnicity: ");
+      String e2 = sc.nextLine();
       System.out.println("Age: ");
-      int age = scan.nextInt();
+      int a2 = sc.nextInt();
+
+      Human h2 = new Human(n2, g2, e2, a2);
+
+      System.out.println();
+
+      System.out.println(h2.toStringStandard());
+
+      System.out.println("Which personality would you want to grant the person?");
+
+      System.out.println("[Gloomy], [Irritable], [Timid], [Upbeat]");
+
+      String personality2 = sc.nextLine();
+
+      System.out.println(h2.personalityStatement(personality2));
+
+      break;
       
-      Human h = new Human(name, race, gender, ethnicity, height, weight, age);
-
-      System.out.println("1.] toStandard");
-
-      int decision = scan.nextInt();
-
-      if(decision == 1){
-        System.out.println(h.toString());
-        
-        scan.close();
-      }
+      default:
+      System.out.println("Invalid choice!");
     }
-    else if(choice == 2){
-       Human h = new Human();
 
-      System.out.println("1.] toStandard");
+    sc.close();
 
-      int decision = scan.nextInt();
-
-      if(decision == 1){
-        System.out.println(h.toString());
-        
-        scan.close();
-      }
-    }
-    else if(choice == 3){
-      System.out.println("Let's Begin!");
-      
-      
-      System.out.println("Filler: ");
-      String filler = scan.nextLine();
-      System.out.println("Name: ");
-      String name = scan.nextLine();
-      System.out.println("Gender: ");
-      String gender = scan.nextLine();
-      System.out.println("Ethnicity: ");
-      String ethnicity = scan.nextLine();
-      System.out.println("Age: ");
-      int age = scan.nextInt();
-      
-      Human h = new Human(name, gender, ethnicity, age);
-
-      System.out.println("1.] toStandard");
-
-      choice = scan.nextInt();
-
-      if(choice == 1){
-        System.out.println(h.toStringStandard());
-        scan.close();
-      }
-    }
   }
-  else{
-    System.out.println("Goodbye!");
+}
+
   }
 }
 }
